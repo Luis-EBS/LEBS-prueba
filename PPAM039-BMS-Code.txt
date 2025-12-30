@@ -1,0 +1,341 @@
+PPAM039  DFHMSD TYPE=&SYSPARM,MODE=INOUT,LANG=COBOL,CTRL=FREEKB,    X
+               STORAGE=AUTO,DSATTS=(COLOR,HILIGHT),               X
+               MAPATTS=(COLOR,HILIGHT),TERM=3270-2,TIOAPFX=YES
+*
+TIN3MAP  DFHMDI SIZE=(24,80),LINE=1,COLUMN=1
+*
+* LINEA 1 - CABECERA BANCO
+         DFHMDF POS=(1,1),LENGTH=78,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=BLUE,                                        X
+               INITIAL='Interbank                                 X
+                                               Pagos Pagoactivo '
+*
+* LINEA 2 - PROGRAMA Y FECHA/HORA
+         DFHMDF POS=(2,1),LENGTH=17,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=YELLOW,                                      X
+               INITIAL='PPAO039-PPAM039   '
+*
+         DFHMDF POS=(2,18),LENGTH=28,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=YELLOW,                                      X
+               INITIAL='TIN-INM - Resumen del Dia '
+*
+FECHA1   DFHMDF POS=(2,46),LENGTH=10,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=YELLOW
+*
+         DFHMDF POS=(2,56),LENGTH=4,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=YELLOW,                                      X
+               INITIAL='    '
+*
+HORA1    DFHMDF POS=(2,60),LENGTH=8,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=YELLOW
+*
+         DFHMDF POS=(2,68),LENGTH=1,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=YELLOW,                                      X
+               INITIAL=' '
+*
+FECHA2   DFHMDF POS=(2,69),LENGTH=10,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=YELLOW
+*
+* LINEA 3 - SEPARADOR
+         DFHMDF POS=(3,1),LENGTH=78,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL='--------------------------------------------X
+               -------------------------------------- '
+*
+* LINEA 4 - ENCABEZADO POR RUBRO
+         DFHMDF POS=(4,1),LENGTH=78,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL='Por Rubro  Proveedores   Planillas      VX
+               arios         CTS         Total-TIN   '
+*
+* LINEA 5 - DATOS POR RUBRO
+         DFHMDF POS=(5,1),LENGTH=11,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL='TIN Inm:   '
+*
+PROV1    DFHMDF POS=(5,12),LENGTH=10,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+PLAN1    DFHMDF POS=(5,25),LENGTH=10,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+VAR1     DFHMDF POS=(5,38),LENGTH=10,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+CTS1     DFHMDF POS=(5,51),LENGTH=10,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+TOT1     DFHMDF POS=(5,67),LENGTH=12,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+* LINEA 6 - ENCABEZADO POR CANAL
+         DFHMDF POS=(6,1),LENGTH=78,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL='Por Canal          BPI         H2H        X
+                PPA        OTRO         Total-TIN   '
+*
+* LINEA 7 - DATOS POR CANAL
+         DFHMDF POS=(7,1),LENGTH=11,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL='TIN Inm:   '
+*
+BPI1     DFHMDF POS=(7,12),LENGTH=10,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+H2H1     DFHMDF POS=(7,25),LENGTH=10,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+PPA1     DFHMDF POS=(7,38),LENGTH=10,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+OTRO1    DFHMDF POS=(7,51),LENGTH=10,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+TOT2     DFHMDF POS=(7,67),LENGTH=12,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+* LINEA 8 - SEPARADOR
+         DFHMDF POS=(8,1),LENGTH=78,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL='--------------------------------------------X
+               -------------------------------------- '
+*
+* LINEA 9 - ENCABEZADO GRILLA
+         DFHMDF POS=(9,1),LENGTH=78,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=YELLOW,                                      X
+               INITIAL=' Estado Nombre-Estado                     X
+                                        Total-TIN'
+*
+* LINEA 10 - SEPARADOR
+         DFHMDF POS=(10,1),LENGTH=78,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL='--------------------------------------------X
+               -------------------------------------- '
+*
+* LINEAS DE DATOS DE LA GRILLA (11-20)
+* LINEA 11
+         DFHMDF POS=(11,1),LENGTH=6,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL=' 10   '
+*
+         DFHMDF POS=(11,7),LENGTH=52,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL='Registrado PPA                           X
+                                   '
+*
+EST01    DFHMDF POS=(11,59),LENGTH=10,                            X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+* LINEA 12
+         DFHMDF POS=(12,1),LENGTH=6,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL=' 11   '
+*
+         DFHMDF POS=(12,7),LENGTH=52,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL='Enviado a titularidad                    X
+                                   '
+*
+EST02    DFHMDF POS=(12,59),LENGTH=10,                            X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+* LINEA 13
+         DFHMDF POS=(13,1),LENGTH=6,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL=' 12   '
+*
+         DFHMDF POS=(13,7),LENGTH=52,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL='Titularidad completada                   X
+                                   '
+*
+EST03    DFHMDF POS=(13,59),LENGTH=10,                            X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+* LINEA 14
+         DFHMDF POS=(14,1),LENGTH=6,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL=' 13   '
+*
+         DFHMDF POS=(14,7),LENGTH=52,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL='Enviado a pagar                          X
+                                   '
+*
+EST04    DFHMDF POS=(14,59),LENGTH=10,                            X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+* LINEA 15
+         DFHMDF POS=(15,1),LENGTH=6,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL=' 14   '
+*
+         DFHMDF POS=(15,7),LENGTH=52,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL='Transferencia completada                 X
+                                   '
+*
+EST05    DFHMDF POS=(15,59),LENGTH=10,                            X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+* LINEA 16
+         DFHMDF POS=(16,1),LENGTH=6,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL=' 15   '
+*
+         DFHMDF POS=(16,7),LENGTH=52,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL='Recepcionado x PPA                       X
+                                   '
+*
+EST06    DFHMDF POS=(16,59),LENGTH=10,                            X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+* LINEA 17
+         DFHMDF POS=(17,1),LENGTH=6,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL=' 16   '
+*
+         DFHMDF POS=(17,7),LENGTH=52,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL='Estado adicional 1                       X
+                                   '
+*
+EST07    DFHMDF POS=(17,59),LENGTH=10,                            X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+* LINEA 18
+         DFHMDF POS=(18,1),LENGTH=6,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL=' 17   '
+*
+         DFHMDF POS=(18,7),LENGTH=52,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL='Estado adicional 2                       X
+                                   '
+*
+EST08    DFHMDF POS=(18,59),LENGTH=10,                            X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+* LINEA 19
+         DFHMDF POS=(19,1),LENGTH=6,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL=' 18   '
+*
+         DFHMDF POS=(19,7),LENGTH=52,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL='Estado adicional 3                       X
+                                   '
+*
+EST09    DFHMDF POS=(19,59),LENGTH=10,                            X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+* LINEA 20
+         DFHMDF POS=(20,1),LENGTH=6,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL=' 19   '
+*
+         DFHMDF POS=(20,7),LENGTH=52,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL='Estado adicional 4                       X
+                                   '
+*
+EST10    DFHMDF POS=(20,59),LENGTH=10,                            X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=GREEN
+*
+* LINEAS EN BLANCO 21-22
+         DFHMDF POS=(21,1),LENGTH=1,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               INITIAL=' '
+*
+         DFHMDF POS=(22,1),LENGTH=1,                              X
+               ATTRB=(ASKIP,NORM),                                X
+               INITIAL=' '
+*
+* LINEA 23 - SEPARADOR
+         DFHMDF POS=(23,1),LENGTH=78,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=WHITE,                                       X
+               INITIAL='--------------------------------------------X
+               -------------------------------------- '
+*
+         DFHMDF POS=(23,79),LENGTH=1,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               INITIAL=' '
+*
+* LINEA 24 - TECLAS DE FUNCION
+         DFHMDF POS=(24,1),LENGTH=78,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=TURQ,                                        X
+               INITIAL=' PF1         PF2          PF3 Retorno PF4X
+                          PF5           PF6           '
+*
+         DFHMDF POS=(24,79),LENGTH=1,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               INITIAL=' '
+*
+* LINEA 25 - SEGUNDA LINEA TECLAS DE FUNCION
+         DFHMDF POS=(25,1),LENGTH=78,                             X
+               ATTRB=(ASKIP,NORM),                                X
+               COLOR=TURQ,                                        X
+               INITIAL=' PF7 Retroc. PF8 Avanza   PF9         PF1X
+               0         PF11          Enter Consulta'
+*
+         DFHMSD TYPE=FINAL
+         END
